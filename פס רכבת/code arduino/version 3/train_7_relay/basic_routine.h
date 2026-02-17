@@ -11,13 +11,13 @@
  *                       RXD-|       |-Gnd  
  *                       RST-|       |-RST
  *                       GND-|       |-+5V  
- * SEGMENT_7_BARRIER_PIN  D2-|       |-A7 SEGMENT_7_SENSOR_PIN 
- * SEGMENT_6_BARRIER_PIN  D3-|       |-A6 SEGMENT_6_SENSOR_PIN 
- * SEGMENT_5_BARRIER_PIN  D4-|       |-A5 SEGMENT_5_SENSOR_PIN
- * SEGMENT_4_BARRIER_PIN  D5-|       |-A4 SEGMENT_4_SENSOR_PIN
- * SEGMENT_3_BARRIER_PIN  D6-|       |-A3 SEGMENT_3_SENSOR_PIN
- * SEGMENT_2_BARRIER_PIN  D7-|       |-A2 SEGMENT_2_SENSOR_PIN 
- * SEGMENT_1_BARRIER_PIN  D8-|       |-A1 SEGMENT_1_SENSOR_PIN  
+ * SEGMENT_7_STATION_PIN  D2-|       |-A7 SEGMENT_7_SENSOR_PIN 
+ * SEGMENT_6_STATION_PIN  D3-|       |-A6 SEGMENT_6_SENSOR_PIN 
+ * SEGMENT_5_STATION_PIN  D4-|       |-A5 SEGMENT_5_SENSOR_PIN
+ * SEGMENT_4_STATION_PIN  D5-|       |-A4 SEGMENT_4_SENSOR_PIN
+ * SEGMENT_3_STATION_PIN  D6-|       |-A3 SEGMENT_3_SENSOR_PIN
+ * SEGMENT_2_STATION_PIN  D7-|       |-A2 SEGMENT_2_SENSOR_PIN 
+ * SEGMENT_1_STATION_PIN  D8-|       |-A1 SEGMENT_1_SENSOR_PIN  
  *                        D9-|       |-A0   
  *         BUTTON_OK_PIN D10-|       |-Ref
  *       BUTTON_NEXT_PIN D11-|       |-3.3V   
@@ -36,13 +36,13 @@ const int Sample_Time = 2; // ms between measures
 #define SEGMENT_6_SENSOR_PIN  A6
 #define SEGMENT_7_SENSOR_PIN  A7
 
-#define SEGMENT_1_BARRIER_PIN  8
-#define SEGMENT_2_BARRIER_PIN  7
-#define SEGMENT_3_BARRIER_PIN  6
-#define SEGMENT_4_BARRIER_PIN  5
-#define SEGMENT_5_BARRIER_PIN  4
-#define SEGMENT_6_BARRIER_PIN  3
-#define SEGMENT_7_BARRIER_PIN  2
+#define SEGMENT_1_STATION_PIN  8
+#define SEGMENT_2_STATION_PIN  7
+#define SEGMENT_3_STATION_PIN  6
+#define SEGMENT_4_STATION_PIN  5
+#define SEGMENT_5_STATION_PIN  4
+#define SEGMENT_6_STATION_PIN  3
+#define SEGMENT_7_STATION_PIN  2
 
 #define BUTTON_OK_PIN    10
 #define BUTTON_NEXT_PIN  11
@@ -57,10 +57,10 @@ const int sensorPins[]  = {
   SEGMENT_4_SENSOR_PIN, SEGMENT_5_SENSOR_PIN, SEGMENT_6_SENSOR_PIN,
   SEGMENT_7_SENSOR_PIN
 };
-const int barrierPins[] = {
-  SEGMENT_1_BARRIER_PIN, SEGMENT_2_BARRIER_PIN, SEGMENT_3_BARRIER_PIN,
-  SEGMENT_4_BARRIER_PIN, SEGMENT_5_BARRIER_PIN, SEGMENT_6_BARRIER_PIN,
-  SEGMENT_7_BARRIER_PIN
+const int STATIONPins[] = {
+  SEGMENT_1_STATION_PIN, SEGMENT_2_STATION_PIN, SEGMENT_3_STATION_PIN,
+  SEGMENT_4_STATION_PIN, SEGMENT_5_STATION_PIN, SEGMENT_6_STATION_PIN,
+  SEGMENT_7_STATION_PIN
 };
 const int numOfSegments = 7;
 //const int numOfSegments = sizeof(sensorPins) / sizeof(sensorPins[0]);
@@ -89,17 +89,17 @@ bool okDoubleClickDetected();
 
 // ====== FONCTIONS BARRIÈRES ======
 void Station_Disconnected(int segmentIndex){
-  Serial.print("closing barrier: ");
+  Serial.print("closing STATION: ");
   Serial.print(segmentIndex + 1);
   Serial.print("\r\n");
-  digitalWrite(barrierPins[segmentIndex], !Station_Connected_Signal);
+  digitalWrite(STATIONPins[segmentIndex], !Station_Connected_Signal);
 }
 
 void Station_Connected(int segmentIndex){
-  Serial.print("opening barrier: ");
+  Serial.print("opening STATION: ");
   Serial.print(segmentIndex + 1);
   Serial.print("\r\n");
-  digitalWrite(barrierPins[segmentIndex], Station_Connected_Signal);
+  digitalWrite(STATIONPins[segmentIndex], Station_Connected_Signal);
 }
 
 int getPreviuosSegment(int segment){
@@ -110,7 +110,7 @@ int getPreviuosSegment(int segment){
 }
 
 bool isStationConnected(int segmentIndex) {
-  return (digitalRead(barrierPins[segmentIndex]) == Station_Connected_Signal);
+  return (digitalRead(STATIONPins[segmentIndex]) == Station_Connected_Signal);
 }
 
 

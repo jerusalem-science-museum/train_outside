@@ -9,7 +9,7 @@ void setup() {
   } else {
     for (int i = 0; i < numOfSegments; i++) pinMode(sensorPins[i], INPUT);
   }
-  for (int i = 0; i < numOfSegments; i++) pinMode(barrierPins[i], OUTPUT);
+  for (int i = 0; i < numOfSegments; i++) pinMode(STATIONPins[i], OUTPUT);
 
   pinMode(BUTTON_NEXT_PIN, INPUT_PULLUP);
   pinMode(BUTTON_OK_PIN,   INPUT_PULLUP);
@@ -17,7 +17,7 @@ void setup() {
   // Tout ouvert au départ
   for (int i = 0; i < numOfSegments; i++) Station_Disconnected(i);
   // Exemple d'état initial
-  Station_Connected(1 % numOfSegments);
+  Station_Connected(0 % numOfSegments);
 
   // Mode manuel au boot
   manualRelaySelector();
@@ -29,20 +29,20 @@ void setup() {
 void loop() {
   
   wdt_reset();
-  int barrierCurrentState;
+  int STATIONCurrentState;
   for (int i = 0; i < numOfSegments; i++) {
     int sensorPin = sensorPins[i];
     if(i == 5 || i == 6 || i == 7){
-      barrierCurrentState = analogRead(sensorPin);
+      STATIONCurrentState = analogRead(sensorPin);
     }
     else{
-      barrierCurrentState = digitalRead(sensorPin);
+      STATIONCurrentState = digitalRead(sensorPin);
     }
     
-    int prevBarrierPin = barrierPins[getPreviuosSegment(i)];
-    if (barrierCurrentState == trainDetectionSignal) {  
+    int prevSTATIONPin = STATIONPins[getPreviuosSegment(i)];
+    if (STATIONCurrentState == trainDetectionSignal) {  
       Serial.println("sensorPin:" +String(i));
-      Serial.println("barrierCurrentState:" +String(barrierCurrentState));
+      Serial.println("STATIONCurrentState:" +String(STATIONCurrentState));
       Station_Disconnected(i);
       delay(100);
       Station_Connected(getPreviuosSegment(i));  
