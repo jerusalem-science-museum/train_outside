@@ -11,13 +11,13 @@
  *  ignition button D2-|       |-A7  
  *                  D3-|       |-A6  
  *                  D4-|       |-A5 
- *            RELAY D5-|       |-A4 
+ *                  D5-|       |-A4 
  *                  D6-|       |-A3
  *                  D7-|       |-A2   
  *                  D8-|       |-A1   
  *                  D9-|       |-A0   
  *                 D10-|       |-Ref
- *                 D11-|       |-3.3V   
+ *        SMOKE_IO D11-|       |-3.3V   
  *                 D12-|       |-D13
  *                      --USB--        
  */
