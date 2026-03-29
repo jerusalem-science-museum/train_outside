@@ -4,7 +4,7 @@
   "name": "Train_Barrierx7_OPTO",
   "content": "",
   "created_at": "2025-08-30 19:47:51",
-  "updated_at": "2025-08-31 04:33:09",
+  "updated_at": "2025-08-31 18:03:46",
   "stick": "",
   "documents": [
     {
@@ -19,14 +19,12 @@
         "5a9ec2085ad6436d86701332d4451b76": 2,
         "65b1ae295679465fabfb76c1fc7cc7e6": 10,
         "69421c1cc8594b888aa0481e292b0f5d": 1,
-        "154b66255b01a09bf1c88bb1ea89be78": 9,
+        "154b66255b01a09bf1c88bb1ea89be78": 16,
         "72dd6b6944675da997cf5a851951151d": 1,
         "411d5fc5016e46cda46b0cba274baae1": 1,
-        "230bc382ca0246f58f622947b27c87e1": 7,
-        "b9804cc65f04eb8a3f2b4055e02f5143": 7,
         "45ddbab4559a43c6bc95d2ca22fb25a0": 9,
         "f80e29816fd30bb295222fb4f47bcc25": 7,
-        "597701dbde98d3183fe5df5fb870ec57": 28,
+        "597701dbde98d3183fe5df5fb870ec57": 35,
         "353ff04a8071d3e6740fa5273965e20c": 7,
         "a3878746005c70adddb43469db023fc0": 7,
         "e869a782b90705dc9926da97baa35b27": 14,
@@ -34,7 +32,9 @@
         "655c0362711f4b5b8d73d50939abd3c7": 7,
         "9bc5d46e2bd4176ac7c3958f1aa86225": 7,
         "506a2f49fd5af7690094a86e81a44ebe": 7,
-        "2136fccdbd134a5a9a82366e6666fe20": 1
+        "2136fccdbd134a5a9a82366e6666fe20": 1,
+        "230bc382ca0246f58f622947b27c87e1": 7,
+        "b9804cc65f04eb8a3f2b4055e02f5143": 7
       },
       "BOM": [
         [
@@ -211,9 +211,9 @@
         ],
         [
           "1kΩ",
-          7,
+          14,
           "R0603",
-          "AR4,BR4,CR4,DR4,ER4,FR4,GR4",
+          "AR4,BR4,CR4,DR4,ER4,FR4,GR4,RS1,RS2,RS3,RS4,RS5,RS6,RS7",
           {
             "BOM_Supplier": "LCSC",
             "BOM_Manufacturer": "UniOhm",
@@ -256,9 +256,9 @@
         ],
         [
           "100nF",
-          9,
+          16,
           "C0603",
-          "C3,C5,COC1,COC2,COC3,COC4,COC5,COC6,COC7",
+          "C3,C5,CIN1,CIN2,CIN3,CIN4,CIN5,CIN6,CIN7,COC1,COC2,COC3,COC4,COC5,COC6,COC7",
           {
             "BOM_Supplier": "LCSC",
             "BOM_Manufacturer": "YAGEO",
@@ -369,11 +369,11 @@
           }
         ]
       ],
-      "updateTime": 1756603951,
+      "updateTime": 1756650380,
       "createTime": 1652993523,
       "histories": [],
       "created_at": "2022-05-19 23:52:03",
-      "updated_at": "2025-08-31 04:32:31"
+      "updated_at": "2025-08-31 17:26:20"
     },
     {
       "uuid": "c91e8a64bf3a8fa50486d8ec21cf0032",
@@ -384,13 +384,13 @@
       "master": "",
       "thumb": "/images/thumb-default.png",
       "components": {
+        "f8151fdc728a41ebbc304e11d39e5437": 16,
+        "398691f1f785460098bbe5ee6590333c": 35,
         "4937126739894c52921de221c4760bbc": 1,
         "c444d117946441c3ab8b7492a6a9cd72": 9,
         "9ba63133985d42cda948c6301d2bf7d5": 7,
         "98de716523d04f20a577f5e7c7e71f1d": 7,
-        "f8151fdc728a41ebbc304e11d39e5437": 9,
         "e8e78627020b4795961cd17fb8b42b10": 14,
-        "398691f1f785460098bbe5ee6590333c": 28,
         "016d763f44dc44908039fc50c7ff6074": 7,
         "fafd024f554e426eb74cf4a204aa88b0": 7,
         "bade90667a6e4731855e9a223387b8a6": 7,
@@ -406,16 +406,16 @@
         "2550b1556b6546148b9e97fc95a93d31": 7
       },
       "BOM": [],
-      "updateTime": 1756603989,
+      "updateTime": 1756652626,
       "createTime": 1652994767,
       "histories": [],
       "created_at": "2022-05-20 00:12:47",
-      "updated_at": "2025-08-31 04:33:09"
+      "updated_at": "2025-08-31 18:03:46"
     }
   ],
   "sort": [],
   "title": "Train_Barrierx7_OPTO",
   "foldername": "Train_Barrierx7_OPTO",
   "schfilename": "Train_Barrierx7_OPTO.json",
-  "schfilemtime": 1756603951647
+  "schfilemtime": 1756650380815
 }
